@@ -78,7 +78,7 @@ rm -rf /home/$USERNAME/* /home/$USERNAME/.[!.]* /home/$USERNAME/..?*
 
 # Clone the dotfiles repository
 echo "Cloning dotfiles repository..."
-git clone https://github.com/Suryabahadurgauli/dotfile.git /home/$USERNAME/dotfile
+git clone https://github.com/Suryabahadurgauli/dotfiile.git /home/$USERNAME/dotfile
 
 # Clone the wallpapers repository
 echo "Cloning wallpapers repository..."
