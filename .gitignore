@@ -22,4 +22,6 @@ Downloads/
 .zsh_history
 .viminfo
 .zshrc.swp
-
+.local/state/lesshst
+.gitignore.swap
+.local/share/xorg/
