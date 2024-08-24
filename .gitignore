@@ -1,0 +1,25 @@
+#######################################################
+######################## Directorys ###################
+#######################################################
+myenv/
+wallpapers/
+softwares/
+.ssh/
+.pki/
+.gnupg/
+Documents/dotfile/
+Downloads/
+.vnc/
+.config/google-chrome/
+.cache/
+################################################
+################### Doted Files ################
+################################################
+.bash_logout
+.bash_history
+.fehbg
+.Xauthority
+.zsh_history
+.viminfo
+.zshrc.swp
+

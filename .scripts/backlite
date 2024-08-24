@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Run xset q and grep for "Scroll Lock:" status
+scroll_lock_status=$(xset q | grep "Scroll Lock:")
+
+# Check if the scroll lock status matches the expected value
+if [[ "$scroll_lock_status" == *"02: Scroll Lock: off"* ]]; then
+    # If Scroll Lock is off, turn on the LED
+    xset led 3
+else
+    # If Scroll Lock is on or the status doesn't match, turn off the LED
+    xset -led 3
+fi

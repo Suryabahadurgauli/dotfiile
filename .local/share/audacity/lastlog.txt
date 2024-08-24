@@ -1,0 +1,4 @@
+08:53:14: Audacity 3.7.0-alpha-20240820
+08:53:14: Warning: Cannot set locale to language "English".
+08:53:15: FFmpeg libraries loaded successfully from: /usr/lib/x86_64-linux-gnu/libavformat.so.61.1.100
+08:53:28: FFmpeg libraries loaded successfully from: /usr/lib/x86_64-linux-gnu/libavformat.so.61.1.100
