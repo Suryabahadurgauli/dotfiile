@@ -155,7 +155,9 @@ fi
 run_sudo systemctl restart NetworkManager
 sleep 10
 echo
-echo "Enter the Golden_network Password : " $WIFI_PASSWORD
+echo -n "Enter the Golden_network Password : " 
+read -s WIFI_PASSWORD
+echo
 nmcli device wifi connect Golden_network password $WIFI_PASSWORD
 
 # Reload systemd configuration and restart getty@tty1
