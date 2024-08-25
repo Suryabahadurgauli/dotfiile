@@ -69,7 +69,7 @@ run_sudo apt update
 run_sudo DEBIAN_FRONTEND=noninteractive apt dist-upgrade -y
 
 # Install necessary packages including xorg, i3-wm, alacritty, zsh, git, wget, curl, fonts-noto-color-emoji, polybar, and rofi
-run_sudo apt install -y xorg i3 alacritty zsh zsh-common zsh-autosuggestions zsh-syntax-highlighting neovim network-manager git wget curl fonts-noto-color-emoji polybar rofi unzip command-not-found
+run_sudo apt install -y xorg i3 alacritty zsh zsh-common zsh-autosuggestions zsh-syntax-highlighting neovim network-manager git wget curl fonts-noto-color-emoji polybar feh rofi unzip command-not-found
 
 # Download and install fonts
 install_font "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip" "/usr/share/fonts/JetBrainsMono"
@@ -126,6 +126,7 @@ stop_service "ifupdown"
 
 # Remove ifupdown
 run_sudo apt remove --purge -y ifupdown
+run_sudo mv /etc/network/interfaces /etc/network/interfaces.bak
 
 # Set up automatic login for tty1
 run_sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
@@ -151,6 +152,11 @@ ExecStart=
 ExecStart=-/sbin/agetty --autologin $USERNAME --noclear %I \$TERM
 EOF
 fi
+run_sudo systemctl restart NetworkManager
+sleep 10
+echo
+echo "Enter the Golden_network Password : " $WIFI_PASSWORD
+nmcli device wifi connect Golden_network password $WIFI_PASSWORD
 
 # Reload systemd configuration and restart getty@tty1
 run_sudo systemctl daemon-reload
