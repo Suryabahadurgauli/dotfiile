@@ -108,6 +108,14 @@ wget -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-
 run_sudo apt install -y /tmp/google-chrome.deb
 rm /tmp/google-chrome.deb
 
+# Install Brave Browser
+echo "Installing Brave Browser..."
+sudo apt install -y apt-transport-https curl
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install -y brave-browser
+
 # Function to check and stop a service if it exists
 stop_service() {
     local service_name=$1
